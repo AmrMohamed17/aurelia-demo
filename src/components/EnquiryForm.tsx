@@ -126,7 +126,7 @@ export default function EnquiryForm({
             {...field("consent")}
           />
           <span className={`text-sm ${sub}`}>
-            I agree to be contacted about Aurelia homes by email, phone or WhatsApp.
+            I agree to be contacted about Hom homes by email, phone or WhatsApp.
           </span>
         </label>
         {errorFor("consent")}

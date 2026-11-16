@@ -8,7 +8,7 @@ import { aed } from "@/lib/format";
 
 export const metadata: Metadata = {
   title: "Communities",
-  description: "Five Aurelia master communities: Dubai Harbour, Dubailand, Dubai Creek, Palm Jumeirah and Downtown Dubai.",
+  description: "Five Hom master communities: Dubai Harbour, Dubailand, Dubai Creek, Palm Jumeirah and Downtown Dubai.",
 };
 
 export default function CommunitiesPage() {

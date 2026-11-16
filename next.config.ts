@@ -1,8 +1,11 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  cacheComponents: true,
-  partialPrefetching: true,
+  // Static export: `npm run build` writes plain HTML/CSS/JS to `out/`,
+  // which any static host (Render, Netlify, Cloudflare Pages, GitHub Pages) can serve.
+  output: "export",
+  // Each page becomes folder/index.html, so /projects/ works on hosts without clean-URL rewrites.
+  trailingSlash: true,
   // Photos are stand-ins served from the Unsplash CDN, which resizes on request.
   images: {
     loader: "custom",

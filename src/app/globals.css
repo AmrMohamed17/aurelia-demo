@@ -250,7 +250,102 @@ select.field option {
     transform 1200ms var(--ease-out-soft);
 }
 
+/* Headline words rise out of their own line masks */
+.split-word {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: top;
+  padding-bottom: 0.08em;
+  margin-bottom: -0.08em;
+}
+.split-word > span {
+  display: inline-block;
+  animation: word-up 1100ms var(--ease-out-soft) both;
+}
+@keyframes word-up {
+  from {
+    transform: translateY(108%);
+  }
+  to {
+    transform: none;
+  }
+}
+
+/* Community marquee */
+.marquee-track {
+  animation: marquee 48s linear infinite;
+}
+.marquee:hover .marquee-track {
+  animation-play-state: paused;
+}
+@keyframes marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* Scroll-driven motion: headings rise, photos open up, hero drifts. CSS only. */
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(48px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes unclip {
+  from {
+    clip-path: inset(14% 8% 14% 8%);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+@keyframes hero-drift {
+  to {
+    transform: translateY(14%) scale(1.04);
+  }
+}
+@keyframes bar-grow {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .section h2,
+    .section h3.display {
+      animation: rise-in linear both;
+      animation-timeline: view();
+      animation-range: entry 5% cover 28%;
+    }
+    .section .frame {
+      animation: unclip linear both;
+      animation-timeline: view();
+      animation-range: entry 0% cover 40%;
+    }
+    .hero-media {
+      animation: hero-drift linear both;
+      animation-timeline: scroll(root);
+      animation-range: 0 100vh;
+    }
+    .progress-bar {
+      animation: bar-grow linear both;
+      animation-timeline: scroll(root);
+      transform-origin: 0 50%;
+    }
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: none;
+  }
   html {
     scroll-behavior: auto;
   }

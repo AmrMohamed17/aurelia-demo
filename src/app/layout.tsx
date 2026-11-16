@@ -18,15 +18,15 @@ const jost = Jost({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://aurelia-properties.example"),
+  metadataBase: new URL("https://hom.example"),
   title: {
-    default: "Aurelia Properties | Homes in Dubai",
-    template: "%s | Aurelia Properties",
+    default: "Hom | Homes in Dubai",
+    template: "%s | Hom",
   },
   description:
     "Apartments, villas and penthouses in five Dubai master communities, from AED 1.2M with payment plans up to 80/20.",
   openGraph: {
-    title: "Aurelia Properties | Homes in Dubai",
+    title: "Hom | Homes in Dubai",
     description:
       "Apartments, villas and penthouses in five Dubai master communities, from AED 1.2M.",
     type: "website",

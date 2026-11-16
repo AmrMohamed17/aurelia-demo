@@ -38,12 +38,12 @@ export type Project = {
 
 export const communities: Community[] = [
   {
-    slug: "aurelia-bay",
-    name: "Aurelia Bay",
+    slug: "harbour-bay",
+    name: "Harbour Bay",
     district: "Dubai Harbour",
     tagline: "A marina district with its own beach and a 2 km promenade.",
     intro:
-      "Aurelia Bay sits on the water between Dubai Marina and Palm Jumeirah. Towers step down to a public beach, a 300-berth marina and a promenade lined with cafés, so most errands are a walk rather than a drive.",
+      "Harbour Bay sits on the water between Dubai Marina and Palm Jumeirah. Towers step down to a public beach, a 300-berth marina and a promenade lined with cafés, so most errands are a walk rather than a drive.",
     highlights: [
       "Private beach for residents, 600 m long",
       "300-berth marina with yacht club",
@@ -77,7 +77,7 @@ export const communities: Community[] = [
     district: "Dubai Creek",
     tagline: "City apartments beside a wildlife sanctuary and the old creek.",
     intro:
-      "Creekside Heights faces the Ras Al Khor flamingo sanctuary on one side and the Downtown skyline on the other. It is the most affordable way into an Aurelia community, with studios and one-bedroom homes from AED 1.2M.",
+      "Creekside Heights faces the Ras Al Khor flamingo sanctuary on one side and the Downtown skyline on the other. It is the most affordable way into a Hom community, with studios and one-bedroom homes from AED 1.2M.",
     highlights: [
       "Views over the Ras Al Khor sanctuary",
       "Metro link planned for 2029",
@@ -126,9 +126,9 @@ export const communities: Community[] = [
 
 export const projects: Project[] = [
   {
-    slug: "aurelia-bay-residences",
-    name: "Aurelia Bay Residences",
-    community: "aurelia-bay",
+    slug: "harbour-bay-residences",
+    name: "Harbour Bay Residences",
+    community: "harbour-bay",
     type: "Apartment",
     beds: [1, 4],
     size: [780, 3150],
@@ -139,7 +139,7 @@ export const projects: Project[] = [
     launch: true,
     summary: "Two towers on the marina edge, every home with a sea-facing balcony.",
     description: [
-      "Aurelia Bay Residences is phase two of the district: two 38-storey towers set back from the marina, with homes from one to four bedrooms.",
+      "Harbour Bay Residences is phase two of the district: two 38-storey towers set back from the marina, with homes from one to four bedrooms.",
       "Every apartment has a balcony that faces the water. Kitchens come fitted with Gaggenau appliances, and four-bedroom homes include a maid's room and a private lift lobby.",
     ],
     amenities: ["Infinity pool on level 40", "Residents' beach club", "Gym and spa", "Children's pool", "Co-working lounge", "Two parking spaces for 3–4 bed homes"],
@@ -152,7 +152,7 @@ export const projects: Project[] = [
   {
     slug: "marea-penthouses",
     name: "Marea Penthouses",
-    community: "aurelia-bay",
+    community: "harbour-bay",
     type: "Penthouse",
     beds: [4, 5],
     size: [6400, 9800],
@@ -342,9 +342,9 @@ export const projects: Project[] = [
 export const journal = [
   {
     date: "2026-11-04",
-    title: "Phase two of Aurelia Bay opens for registration",
+    title: "Phase two of Harbour Bay opens for registration",
     excerpt: "Two towers, 640 homes and the first release of four-bedroom apartments on the marina edge.",
-    href: "/projects/aurelia-bay-residences",
+    href: "/projects/harbour-bay-residences",
     image: "photo-1526495124232-a04e1849168c",
     alt: "Marina towers at dusk",
   },

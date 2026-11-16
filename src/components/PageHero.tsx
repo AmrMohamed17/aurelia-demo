@@ -1,5 +1,6 @@
 import Image from "next/image";
 import type { ReactNode } from "react";
+import { SplitWords } from "./Motion";
 
 type Props = {
   image: string;
@@ -28,11 +29,8 @@ export default function PageHero({ image, alt, eyebrow, title, intro, children, 
             {eyebrow}
           </p>
         )}
-        <h1
-          className="display enter mt-3 max-w-5xl text-[clamp(2.6rem,7vw,6rem)]"
-          style={{ ["--d" as string]: 1 }}
-        >
-          {title}
+        <h1 className="display mt-3 max-w-5xl text-[clamp(2.6rem,7vw,6rem)]">
+          <SplitWords text={title} delay={120} />
         </h1>
         {intro && (
           <p className="enter prose-body mt-6 max-w-2xl text-ivory/85" style={{ ["--d" as string]: 2 }}>

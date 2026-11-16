@@ -2,7 +2,7 @@ import { siWhatsapp } from "simple-icons";
 
 // Opens WhatsApp with a prefilled message. A real build would add the sales number to the URL.
 export default function ChatButton() {
-  const text = encodeURIComponent("Hello Aurelia, I'd like to know more about your homes in Dubai.");
+  const text = encodeURIComponent("Hello Hom, I'd like to know more about your homes in Dubai.");
   return (
     <a
       href={`https://wa.me/?text=${text}`}

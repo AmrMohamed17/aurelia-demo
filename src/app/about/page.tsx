@@ -2,12 +2,13 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import { CountUp } from "@/components/Motion";
 import PageHero from "@/components/PageHero";
 import { stats } from "@/data/site";
 
 export const metadata: Metadata = {
   title: "About",
-  description: "Aurelia Properties has built homes in Dubai since 2008, with 24,600 handed over across five communities.",
+  description: "Hom has built homes in Dubai since 2008, with 24,600 handed over across five communities.",
 };
 
 const milestones = [
@@ -16,11 +17,11 @@ const milestones = [
   ["2017", "The Dunes Estate launches in Dubailand."],
   ["2021", "Palm Crescent villas sell out in its first weekend."],
   ["2024", "First branded tower, with Casa Lumen."],
-  ["2026", "Aurelia Bay phase two opens for registration."],
+  ["2026", "Harbour Bay phase two opens for registration."],
 ];
 
 const principles = [
-  ["Finish what we start", "Every Aurelia building since 2008 has been completed, and 70% were handed over early or on the contract date."],
+  ["Finish what we start", "Every Hom building since 2008 has been completed, and 70% were handed over early or on the contract date."],
   ["Build the neighbourhood first", "Schools, parks and shops open with the first homes, so early residents are not living on a building site."],
   ["Publish the plan", "Each project page shows its payment stages and fees in full, before you speak to anyone."],
 ];
@@ -42,7 +43,7 @@ export default function AboutPage() {
               Built in Dubai, for people who live here
             </h2>
             <p className="prose-body mt-6 max-w-xl text-muted">
-              Aurelia started with one tower on Dubai Creek. Eighteen years on, we have handed over
+              Hom started with one tower on Dubai Creek. Eighteen years on, we have handed over
               24,600 homes and have 9,200 more under construction across five communities.
             </p>
             <p className="prose-body mt-5 max-w-xl text-muted">
@@ -72,7 +73,9 @@ export default function AboutPage() {
             {stats.map((s) => (
               <div key={s.label} className="flex flex-col-reverse gap-3 border-l border-gold/40 pl-6">
                 <dt className="text-mist">{s.label}</dt>
-                <dd className="display text-[clamp(2.6rem,5vw,4rem)] leading-none text-gold">{s.value}</dd>
+                <dd className="display text-[clamp(2.6rem,5vw,4rem)] leading-none text-gold">
+                  <CountUp value={s.value} />
+                </dd>
               </div>
             ))}
           </dl>

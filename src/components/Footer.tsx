@@ -20,7 +20,7 @@ const columns = [
   {
     title: "Company",
     links: [
-      { href: "/about", label: "About Aurelia" },
+      { href: "/about", label: "About Hom" },
       { href: "/#invest", label: "Buying in Dubai" },
       { href: "/#journal", label: "Journal" },
       { href: "/contact", label: "Contact" },
@@ -50,8 +50,8 @@ export default function Footer() {
               <div>
                 <dt className="text-mist">Email</dt>
                 <dd>
-                  <a className="link-draw" href="mailto:sales@aurelia.example">
-                    sales@aurelia.example
+                  <a className="link-draw" href="mailto:sales@hom.example">
+                    sales@hom.example
                   </a>
                 </dd>
               </div>
@@ -75,7 +75,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="mt-16 flex flex-col gap-3 border-t border-ink-3 pt-8 text-sm text-mist md:flex-row md:justify-between">
-          <p>© 2026 Aurelia Properties. A fictional developer built as a design demo; enquiries are not sent.</p>
+          <p>© 2026 Hom. A fictional developer built as a design demo; enquiries are not sent.</p>
           <p>Photography: stand-in images from Unsplash.</p>
         </div>
       </div>

@@ -3,6 +3,8 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import CommunityShowcase from "@/components/CommunityShowcase";
 import EnquiryForm from "@/components/EnquiryForm";
+import Marquee from "@/components/Marquee";
+import { CountUp, SplitWords } from "@/components/Motion";
 import PlanTimeline from "@/components/PlanTimeline";
 import ProjectCard from "@/components/ProjectCard";
 import SearchBar from "@/components/SearchBar";
@@ -29,11 +31,8 @@ export default function Home() {
           <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/50 to-ink/10" />
         </div>
         <div className="wrap pb-10 pt-36 md:pb-14">
-          <h1
-            className="display enter max-w-[15ch] text-[clamp(2.9rem,8vw,7.25rem)]"
-            style={{ ["--d" as string]: 0 }}
-          >
-            Homes on Dubai&rsquo;s water, dunes and skyline
+          <h1 className="display max-w-[15ch] text-[clamp(2.9rem,8vw,7.25rem)]">
+            <SplitWords text="Homes on Dubai’s water, dunes and skyline" delay={200} />
           </h1>
           <div className="mt-8 grid gap-8 md:grid-cols-[1fr_auto] md:items-end">
             <p className="enter prose-body max-w-xl text-ivory/85" style={{ ["--d" as string]: 1 }}>
@@ -54,6 +53,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <Marquee />
 
       {/* New launches */}
       <section className="section bg-ivory" aria-labelledby="launches-h">
@@ -216,7 +217,9 @@ export default function Home() {
             {stats.map((s) => (
               <div key={s.label} className="flex flex-col-reverse gap-3 border-l border-gold/40 pl-6">
                 <dt className="text-mist">{s.label}</dt>
-                <dd className="display text-[clamp(2.6rem,5vw,4rem)] leading-none text-gold">{s.value}</dd>
+                <dd className="display text-[clamp(2.6rem,5vw,4rem)] leading-none text-gold">
+                  <CountUp value={s.value} />
+                </dd>
               </div>
             ))}
           </dl>
@@ -263,8 +266,8 @@ export default function Home() {
               <div>
                 <dt className="text-sm text-mist">Email</dt>
                 <dd>
-                  <a href="mailto:sales@aurelia.example" className="link-draw text-lg">
-                    sales@aurelia.example
+                  <a href="mailto:sales@hom.example" className="link-draw text-lg">
+                    sales@hom.example
                   </a>
                 </dd>
               </div>

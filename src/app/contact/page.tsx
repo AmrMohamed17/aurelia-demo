@@ -8,9 +8,9 @@ export const metadata: Metadata = {
 };
 
 const contacts = [
-  ["New homes and viewings", "sales@aurelia.example"],
-  ["Owners and handover", "care@aurelia.example"],
-  ["Brokers and agents", "partners@aurelia.example"],
+  ["New homes and viewings", "sales@hom.example"],
+  ["Owners and handover", "care@hom.example"],
+  ["Brokers and agents", "partners@hom.example"],
 ];
 
 export default function ContactPage() {

@@ -46,8 +46,13 @@ export default function Header() {
           solid ? "opacity-0" : "opacity-100"
         }`}
       />
+      <div
+        aria-hidden
+        className="progress-bar absolute inset-x-0 bottom-0 h-px bg-gold"
+        style={{ transform: "scaleX(0)" }}
+      />
       <div className="wrap flex h-[var(--header-h)] items-center justify-between gap-6">
-        <Link href="/" aria-label="Aurelia Properties, home" onClick={() => setOpen(false)}>
+        <Link href="/" aria-label="Hom, home" onClick={() => setOpen(false)}>
           <Logo />
         </Link>
 
