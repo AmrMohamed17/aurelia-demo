@@ -37,7 +37,7 @@ export default function ProjectCard({
           <p className={`text-sm ${sub}`}>
             {community?.name} · {community?.district}
           </p>
-          <h3 className="display mt-1.5 text-[1.75rem]">
+          <h3 className="display mt-1.5 text-[2rem] leading-[1.05]">
             <span className="link-draw">{project.name}</span>
           </h3>
         </div>

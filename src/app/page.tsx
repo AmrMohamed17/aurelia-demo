@@ -6,77 +6,62 @@ import EnquiryForm from "@/components/EnquiryForm";
 import Marquee from "@/components/Marquee";
 import { CountUp, SplitWords } from "@/components/Motion";
 import PlanTimeline from "@/components/PlanTimeline";
-import ProjectCard from "@/components/ProjectCard";
+import HeroSlideshow from "@/components/HeroSlideshow";
+import ProjectRail from "@/components/ProjectRail";
 import SearchBar from "@/components/SearchBar";
 import { communityBySlug, journal, projects, stats } from "@/data/site";
 import { aed, longDate } from "@/lib/format";
 
+const STATEMENT =
+  "Since 2008 we have handed over 24,600 homes in Dubai. We open the schools, parks and shops first, so the first families move into a neighbourhood, not a building site.";
+
 export default function Home() {
-  const launches = projects.filter((p) => p.launch);
   const branded = projects.filter((p) => p.branded);
 
   return (
     <>
-      {/* Hero */}
-      <section className="relative isolate flex min-h-[100svh] items-end overflow-hidden bg-ink text-ivory">
-        <div className="hero-media absolute inset-0 -z-10">
-          <Image
-            src="photo-1512453979798-5ea266f8880c"
-            alt="Downtown Dubai and the Burj Khalifa at sunset"
-            fill
-            priority
-            sizes="100vw"
-            className="object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/50 to-ink/10" />
-        </div>
-        <div className="wrap pb-10 pt-36 md:pb-14">
-          <h1 className="display max-w-[15ch] text-[clamp(2.9rem,8vw,7.25rem)]">
-            <SplitWords text="Homes on Dubai’s water, dunes and skyline" delay={200} />
-          </h1>
-          <div className="mt-8 grid gap-8 md:grid-cols-[1fr_auto] md:items-end">
-            <p className="enter prose-body max-w-xl text-ivory/85" style={{ ["--d" as string]: 1 }}>
-              Apartments, villas and penthouses in five master communities. Prices start at AED 1.2M,
-              with payment plans that spread up to 80% over the build.
-            </p>
-            <div className="enter flex flex-wrap gap-3" style={{ ["--d" as string]: 2 }}>
-              <Link href="/projects" className="btn btn-gold">
-                Browse projects <ArrowRight size={16} aria-hidden />
-              </Link>
-              <Link href="/contact" className="btn btn-line-light">
-                Book a viewing
-              </Link>
-            </div>
-          </div>
-          <div className="enter mt-12" style={{ ["--d" as string]: 3 }}>
-            <SearchBar />
+      <HeroSlideshow>
+        <h1 className="display max-w-[14ch] text-[clamp(3rem,8.4vw,7.75rem)] font-light">
+          <SplitWords text="Homes on Dubai’s water, dunes and skyline" delay={200} />
+        </h1>
+        <div className="mt-8 grid gap-8 md:grid-cols-[1fr_auto] md:items-end xl:mr-72">
+          <p className="enter prose-body max-w-xl text-ivory/85" style={{ ["--d" as string]: 1 }}>
+            Apartments, villas and penthouses in five master communities. Prices start at AED 1.2M,
+            with payment plans that spread up to 80% over the build.
+          </p>
+          <div className="enter flex flex-wrap gap-3" style={{ ["--d" as string]: 2 }}>
+            <Link href="/projects" className="btn btn-gold">
+              Browse projects <ArrowRight size={16} aria-hidden />
+            </Link>
+            <Link href="/contact" className="btn btn-line-light">
+              Book a viewing
+            </Link>
           </div>
         </div>
-      </section>
+        <div className="enter mt-12" style={{ ["--d" as string]: 3 }}>
+          <SearchBar />
+        </div>
+      </HeroSlideshow>
 
       <Marquee />
 
-      {/* New launches */}
-      <section className="section bg-ivory" aria-labelledby="launches-h">
+      <ProjectRail />
+
+      {/* Statement: words fill in as they scroll past */}
+      <section className="section bg-sand" aria-label="Our approach">
         <div className="wrap">
-          <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
-            <h2 id="launches-h" className="display max-w-2xl text-[clamp(2.4rem,5vw,4.25rem)]">
-              New launches this season
-            </h2>
-            <Link href="/projects?status=Off-plan" className="label link-draw self-start text-bronze md:self-auto">
-              All off-plan projects
-            </Link>
-          </div>
-          <div className="mt-14 grid gap-x-8 gap-y-14 md:grid-cols-2 lg:grid-cols-3">
-            {launches.map((p) => (
-              <ProjectCard key={p.slug} project={p} tall />
+          <p className="display max-w-[24ch] text-[clamp(2.2rem,4.8vw,4.6rem)] leading-[1.1]">
+            {STATEMENT.split(" ").map((w, i) => (
+              <span key={i} className="fill-word">
+                {w}{" "}
+              </span>
             ))}
-          </div>
+          </p>
         </div>
       </section>
 
       {/* Communities */}
-      <section className="section bg-sand" aria-labelledby="communities-h">
+      <section className="section bg-ivory" aria-labelledby="communities-h">
         <div className="wrap">
           <div className="grid gap-6 lg:grid-cols-[1fr_1.15fr] lg:gap-16">
             <h2 id="communities-h" className="display text-[clamp(2.4rem,5vw,4.25rem)]">

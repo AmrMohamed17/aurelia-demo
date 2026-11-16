@@ -29,7 +29,7 @@ export default function PageHero({ image, alt, eyebrow, title, intro, children, 
             {eyebrow}
           </p>
         )}
-        <h1 className="display mt-3 max-w-5xl text-[clamp(2.6rem,7vw,6rem)]">
+        <h1 className="display mt-3 max-w-5xl text-[clamp(2.8rem,7.4vw,6.5rem)] font-light">
           <SplitWords text={title} delay={120} />
         </h1>
         {intro && (

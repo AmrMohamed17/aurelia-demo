@@ -1,18 +1,20 @@
 import type { Metadata, Viewport } from "next";
-import { Bodoni_Moda, Jost } from "next/font/google";
+import { Cormorant_Garamond, Manrope } from "next/font/google";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ChatButton from "@/components/ChatButton";
+import SmoothScroll from "@/components/SmoothScroll";
 import "./globals.css";
 
-const bodoni = Bodoni_Moda({
-  variable: "--font-bodoni",
+const display = Cormorant_Garamond({
+  variable: "--font-cormorant",
   subsets: ["latin"],
+  weight: ["300", "400", "500"],
   display: "swap",
 });
 
-const jost = Jost({
-  variable: "--font-jost",
+const sans = Manrope({
+  variable: "--font-manrope",
   subsets: ["latin"],
   display: "swap",
 });
@@ -39,7 +41,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en" className={`${bodoni.variable} ${jost.variable} antialiased`}>
+    <html lang="en" className={`${display.variable} ${sans.variable} antialiased`}>
       <body className="flex min-h-svh flex-col">
         <a
           href="#main"
@@ -53,6 +55,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         </main>
         <Footer />
         <ChatButton />
+        <SmoothScroll />
       </body>
     </html>
   );

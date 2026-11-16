@@ -17,10 +17,20 @@ const nav = [
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
+  const [hidden, setHidden] = useState(false);
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24);
+    let last = window.scrollY;
+    const onScroll = () => {
+      const y = window.scrollY;
+      setScrolled(y > 24);
+      // Hide while reading downwards, return as soon as the visitor scrolls up.
+      if (Math.abs(y - last) > 6) {
+        setHidden(y > last && y > 480);
+        last = y;
+      }
+    };
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
@@ -37,9 +47,9 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 text-ivory transition-colors duration-300 ${
+      className={`fixed inset-x-0 top-0 z-50 text-ivory transition-[background-color,translate] duration-500 ease-[var(--ease-out-soft)] ${
         solid ? "bg-ink" : "bg-transparent"
-      }`}
+      } ${hidden && !open ? "-translate-y-full" : "translate-y-0"}`}
     >
       <div
         className={`pointer-events-none absolute inset-0 -z-10 bg-gradient-to-b from-ink/60 to-transparent transition-opacity duration-300 ${
